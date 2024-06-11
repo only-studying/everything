@@ -107,36 +107,36 @@ def main():
                                     file.flush()
                                     exit(1)  # 遇到问题直接重启,这种一般是遇到机器人检测了
                                 break
-                            else:
+                            else:  # 随机访问该页面的网页链接，模拟人的浏览功能
                                 x = random.randint(0,6)
-                                if x>=5:
-                                    x_3 = 0
-                                    while True:
-                                        try:
-                                            x_3 = x_3 + 1
-                                            driver.get(url)
-                                            time.sleep(random.randint(Environment['time'] - 2, Environment['time']))
-                                            file.write(f'打开链接{url}\n')
-                                            file.write(f'当前窗口标题为{text}的页面中\n')
-                                            file.flush()
-                                            driver.execute_script(f'window.scrollBy(0,{random.randint(500, 700)})')
-                                            time.sleep(random.randint(Environment["target_see_time"]-3, Environment["target_see_time"]+3))
-                                            driver.execute_script("var q=document.documentElement.scrollTop=0")
-                                            break
-                                        except:
-                                            if x_3 <10:
-                                                file.write(
-                                                    f'第{x}个关键词当前第{ye_num}页面第{parament}个参数跳转链接失败，继续尝试\n')
-                                                continue
-                                            else :
-                                                exit(1)
-                                    try:
-                                        driver.back()  # 返回主页面
-                                        file.write('关闭窗口\n')
-                                    except:
-                                        file.write(f'第{x}个关键词当前第{ye_num}页面第{parament}个参数返回失败,,,,,,,\n')
-                                        file.flush()
-                                        exit(1)  # 遇到问题直接重启,这种一般是遇到机器人检测了
+                                # if x>=5:
+                                #     x_3 = 0
+                                #     while True:
+                                #         try:
+                                #             x_3 = x_3 + 1
+                                #             driver.get(url)
+                                #             time.sleep(random.randint(Environment['time'] - 2, Environment['time']))
+                                #             file.write(f'打开链接{url}\n')
+                                #             file.write(f'当前窗口标题为{text}的页面中\n')
+                                #             file.flush()
+                                #             driver.execute_script(f'window.scrollBy(0,{random.randint(500, 700)})')
+                                #             time.sleep(random.randint(Environment["target_see_time"]-3, Environment["target_see_time"]+3))
+                                #             driver.execute_script("var q=document.documentElement.scrollTop=0")
+                                #             break
+                                #         except:
+                                #             if x_3 <10:
+                                #                 file.write(
+                                #                     f'第{x}个关键词当前第{ye_num}页面第{parament}个参数跳转链接失败，继续尝试\n')
+                                #                 continue
+                                #             else :
+                                #                 exit(1)
+                                #     try:
+                                #         driver.back()  # 返回主页面
+                                #         file.write('关闭窗口\n')
+                                #     except:
+                                #         file.write(f'第{x}个关键词当前第{ye_num}页面第{parament}个参数返回失败,,,,,,,\n')
+                                #         file.flush()
+                                #         exit(1)  # 遇到问题直接重启,这种一般是遇到机器人检测了
                     else:
                         print('匹配只能word格式')
                         exit(1)
