@@ -1,0 +1,34 @@
+
+{
+    "search_engine_name":
+    [
+        {
+            "liulanqi": "https://cn.bing.com/?mkt=zh-CN",
+            "id": "sb_form_q",
+            "buttom": "sb_form_go",
+            "filter": "b_tpcn"
+        },
+        {
+            "liulanqi": "https://www.baidu.com/",
+            "id": "kw",
+            "buttom": "su",
+            "filter": "c-title t t tts-title"
+        }
+
+    ]
+    ,
+    "search_words": [
+        {
+            "kw": "自主IEC61131-1",
+            "target":
+                {
+                "type": "word",
+                "value": ["基于IEC61131-3标准的可编程控制器的设计与实现 - 豆丁网","百叶片自动机:攻克工业软件“卡脖子”技术,国产IEC61131-3"]
+                }
+        }
+    ],
+    "time": 3,
+    "skip_time": 300,
+    "num_repete": 5,
+    "target_see_time": 10
+}
